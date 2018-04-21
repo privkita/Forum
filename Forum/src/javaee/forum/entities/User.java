@@ -12,21 +12,21 @@ public class User implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private int userId;
+	private int user_id;
 	private String login;
 	private String password;
 	private Timestamp date;
-	@OneToMany(mappedBy="user", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="user_id", fetch = FetchType.EAGER)
 	private Set<Subject> subjects;
-	@OneToMany(mappedBy="user", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="user_id", fetch = FetchType.EAGER)
 	private Set<Post> posts;
 
-	public int getUserId() {
-		return userId;
+	public int getUser_id() {
+		return user_id;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getLogin() {

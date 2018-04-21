@@ -39,5 +39,12 @@
 	    <artifactId>javax.persistence</artifactId>
 	    <version>2.1.0</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>5.2.12.Final</version>
+	</dependency>
+	
   </dependencies>
 </project>

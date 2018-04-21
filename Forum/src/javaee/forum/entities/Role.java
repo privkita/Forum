@@ -10,16 +10,16 @@ public class Role implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private int roleId;
+	private int role_id;
 	private String login;
 	private String role;
 
-	public int getRoleId() {
-		return roleId;
+	public int getRole_id() {
+		return role_id;
 	}
 
-	public void setRoleId(int roleId) {
-		this.roleId = roleId;
+	public void setRole_id(int roleId) {
+		this.role_id = roleId;
 	}
 
 	public String getLogin() {

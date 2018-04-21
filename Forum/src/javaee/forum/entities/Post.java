@@ -6,36 +6,28 @@ import java.sql.Timestamp;
 import javax.persistence.*;
 
 @Entity
-@Table(name="posts")
+@Table(name = "posts")
 public class Post implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private int postId;
-	private Timestamp date;
+	private int post_id;
 	@Lob()
 	private String content;
+	private Timestamp date;
 	@ManyToOne
-	@JoinColumn(name="user_id")
-	private User user;
+	@JoinColumn(name = "subject_id")
+	private Subject subject_id;
 	@ManyToOne
-	@JoinColumn(name="subject_id")
-	private Subject subject;
+	@JoinColumn(name = "user_id")
+	private User user_id;
 
-	public int getPostId() {
-		return postId;
+	public int getPost_id() {
+		return post_id;
 	}
 
-	public void setPostId(int postId) {
-		this.postId = postId;
-	}
-
-	public Timestamp getDate() {
-		return date;
-	}
-
-	public void setDate(Timestamp date) {
-		this.date = date;
+	public void setPost_id(int post_id) {
+		this.post_id = post_id;
 	}
 
 	public String getContent() {
@@ -46,20 +38,28 @@ public class Post implements Serializable {
 		this.content = content;
 	}
 
-	public User getUser() {
-		return user;
+	public Timestamp getDate() {
+		return date;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setDate(Timestamp date) {
+		this.date = date;
 	}
 
-	public Subject getSubject() {
-		return subject;
+	public Subject getSubject_id() {
+		return subject_id;
 	}
 
-	public void setSubject(Subject subject) {
-		this.subject = subject;
+	public void setSubject_id(Subject subject_id) {
+		this.subject_id = subject_id;
+	}
+
+	public User getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(User user_id) {
+		this.user_id = user_id;
 	}
 
 }

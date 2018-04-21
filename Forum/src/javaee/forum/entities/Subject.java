@@ -12,24 +12,24 @@ public class Subject implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	private int subjectId;
+	private int subject_id;
 	private String title;
 	@Lob()
 	private String content;
 	private Timestamp date;
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private User user;
-	@OneToMany(mappedBy="subject", fetch=FetchType.EAGER)
+	private User user_id;
+	@OneToMany(mappedBy="subject_id", fetch=FetchType.EAGER)
 	@OrderBy("date ASC")
 	private Set<Post> posts;
 
-	public int getSubjectId() {
-		return subjectId;
+	public int getSubject_id() {
+		return subject_id;
 	}
 
-	public void setSubjectId(int subjectId) {
-		this.subjectId = subjectId;
+	public void setSubject_id(int subject_id) {
+		this.subject_id = subject_id;
 	}
 
 	public String getTitle() {
@@ -56,12 +56,12 @@ public class Subject implements Serializable {
 		this.date = date;
 	}
 
-	public User getUser() {
-		return user;
+	public User getUser_id() {
+		return user_id;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUser_id(User user_id) {
+		this.user_id = user_id;
 	}
 
 	public Set<Post> getPosts() {

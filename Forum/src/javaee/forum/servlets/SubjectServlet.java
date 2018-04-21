@@ -50,8 +50,8 @@ public class SubjectServlet extends HttpServlet {
 			Post post = new Post();
 			post.setDate(new Timestamp(new Date().getTime()));
 			post.setContent(content);
-			post.setUser(loggedIn);
-			post.setSubject(subject);
+			post.setUser_id(loggedIn);
+			post.setSubject_id(subject);
 			postsDao.addPost(post);
 		}
 		doGet(request, response);
