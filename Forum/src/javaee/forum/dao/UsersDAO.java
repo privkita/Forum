@@ -3,6 +3,7 @@ package javaee.forum.dao;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -15,15 +16,15 @@ public class UsersDAO {
 	public UsersDAO(EntityManager em) {
 		this.em = em;
 	}
-	
+
 	public User getByLogin(String login) {
-		User u = (User)em.createQuery("SELECT u from users u WHERE u.login = :login").
+		User u = (User)em.createQuery("SELECT u FROM User u WHERE u.login = :login").
 				setParameter("login", login).getSingleResult();
 		return u;
 	}
 	
 	public boolean addUser(User u) {
-		u.setPassword(this.getMD5(u.getPassword()));
+ 		u.setPassword(this.getMD5(u.getPassword()));
 		Role r = new Role();
 		r.setLogin(u.getLogin());
 		r.setRole("user");

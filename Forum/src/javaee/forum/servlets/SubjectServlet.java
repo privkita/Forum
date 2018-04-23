@@ -25,14 +25,14 @@ public class SubjectServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String stringId = request.getParameter("id");
+		String stringId = request.getParameter("id"); // ??
 		if (stringId != null) {
 			int id = Integer.parseInt(stringId);
-			SubjectsDAO subjectsDao = (SubjectsDAO) request.getAttribute("subjectsDao");
+			SubjectsDAO subjectsDao = (SubjectsDAO) request.getAttribute("subjectsDAO");
 			Subject subject = subjectsDao.getSubject(id);
 			request.setAttribute("subject", subject);
 			request.getRequestDispatcher("WEB-INF/view/subject.jsp").forward(request, response);
-
+ 
 		} else
 			response.sendRedirect(request.getContextPath() + "/");
 	}
@@ -43,14 +43,14 @@ public class SubjectServlet extends HttpServlet {
 		String stringId = request.getParameter("id");
 		if (content != null && stringId != null) {
 			int id = Integer.parseInt(stringId);
-			PostsDAO postsDao = (PostsDAO) request.getAttribute("postsDao");
-			SubjectsDAO subjectsDao = (SubjectsDAO) request.getAttribute("subjectsDao");
+			PostsDAO postsDao = (PostsDAO) request.getAttribute("postsDAO");
+			SubjectsDAO subjectsDao = (SubjectsDAO) request.getAttribute("subjectsDAO");
 			User loggedIn = (User) request.getSession().getAttribute("user");
 			Subject subject = subjectsDao.getSubject(id);
 			Post post = new Post();
 			post.setDate(new Timestamp(new Date().getTime()));
 			post.setContent(content);
-			post.setUser_id(loggedIn);
+			post.setUser_id(loggedIn); //loggedIn.getUser_id
 			post.setSubject_id(subject);
 			postsDao.addPost(post);
 		}

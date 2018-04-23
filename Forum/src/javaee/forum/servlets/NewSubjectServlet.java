@@ -38,7 +38,7 @@ public class NewSubjectServlet extends HttpServlet {
 			subject.setDate(t);
 			subject.setContent(content);
 			subject.setTitle(title);
-			subject.setUser_id(loggedIn);
+			subject.setUser_id(loggedIn); // loggedIn.getID?
 			if (subjectsDao.addSubject(subject))
 				response.sendRedirect(request.getContextPath() + "/subject?id=" + subject.getSubject_id());
 		}

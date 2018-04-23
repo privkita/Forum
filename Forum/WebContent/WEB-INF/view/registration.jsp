@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Forum - rejestracja uytkownika</title>
+<title>Forum - rejestracja</title>
 </head>
 <body>
 	<h1>Rejestracja</h1>
@@ -15,7 +15,7 @@
 		<p>Hasło:</p>
 		<input type="password" name="password" maxlength="20" />
 		<p>Powtórz hasło:</p>
-		<input type="password" name="password2" maxlength="20"/>
+		<input type="password" name="password2" maxlength="20"/><br />
 		<input type="submit" value="Rejestruj" />
 	</form>
 </body>

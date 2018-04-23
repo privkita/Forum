@@ -1,8 +1,15 @@
 package javaee.forum.servlets;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,13 +37,16 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String password2 = request.getParameter("password2");
 		if (login != null && password != null && !password.equals("") && password.equals(password2)) {
-			UsersDAO usersDao = (UsersDAO) request.getAttribute("usersDao");
+			UsersDAO usersDao = (UsersDAO) request.getAttribute("usersDAO");
 			try {
+				System.out.println("jestem w try i login to: " + login);
 				usersDao.getByLogin(login);
+				System.out.println("jestem w try po usersDAO i login to: " + login);
 				request.setAttribute("error", "Użytkownik o podanym loginie już istnieje");
 				doGet(request, response);
 				return;
-			} catch (NoResultException nre) {
+			} catch (Exception nre) {
+				System.out.println("jestem w catch i login to: " + login);
 				User u = new User();
 				u.setLogin(login);
 				u.setPassword(password);

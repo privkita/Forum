@@ -9,7 +9,8 @@ import javax.persistence.*;
 public class Role implements Serializable{
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name="role_id", updatable=false, nullable=false)
 	private int role_id;
 	private String login;
 	private String role;

@@ -11,11 +11,11 @@ import javax.persistence.*;
 public class User implements Serializable{
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name="user_id", updatable=false, nullable=false)
 	private int user_id;
 	private String login;
 	private String password;
-	private Timestamp date;
 	@OneToMany(mappedBy="user_id", fetch = FetchType.EAGER)
 	private Set<Subject> subjects;
 	@OneToMany(mappedBy="user_id", fetch = FetchType.EAGER)
@@ -43,14 +43,6 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Timestamp getDate() {
-		return date;
-	}
-
-	public void setDate(Timestamp date) {
-		this.date = date;
 	}
 
 	public Set<Subject> getSubjects() {

@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Forum</title>
+<title>Forum - dodaj nowy temat</title>
 </head>
 <body>
 	<form method="post">
 		<p>Podaj tytuł tematu:</p>
-		<input type="text" name="subject" maxlength="255" />
+		<input type="text" name="title" maxlength="255" />
 		<p>Podaj treść tematu:</p>
 		<textarea name="content" rows="9" cols="40"></textarea><br />
 		<input type="submit" value="Dodaj" />

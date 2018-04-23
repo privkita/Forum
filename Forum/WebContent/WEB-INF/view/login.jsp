@@ -9,11 +9,11 @@
 <body>
 	<h1>Zaloguj się</h1>
 	<form method="post" action="j_security_check">
-	<p>Login:</p>
-	<input type="text" name="j_username" />
-	<p>Hasło:</p>
-	<input type="password" name="j_password" />
-	<input type="submit" value="Zaloguj" />
+		<p>Login:</p>
+		<input type="text" name="j_username" />
+		<p>Hasło:</p>
+		<input type="password" name="j_password" />
+		<input type="submit" value="Zaloguj" />
 	</form>
 	<a href="registration">Rejestracja</a>
 </body>

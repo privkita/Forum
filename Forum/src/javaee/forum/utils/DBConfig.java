@@ -23,13 +23,10 @@ public class DBConfig implements ServletContextListener{
 	}
 	
 	public static EntityManager createEntityManager() {
-		if (emf != null)
+		if (emf != null) {
 			return emf.createEntityManager();
-		else
+		} else
 			return null;
 	}
-	
-	
-	
 
 }

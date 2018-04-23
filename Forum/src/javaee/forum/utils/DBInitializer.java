@@ -22,15 +22,16 @@ public class DBInitializer implements ServletRequestListener {
          // TODO Auto-generated method stub
     }
 
-    public void requestInitialized(ServletRequestEvent sre)  { 
+    public void requestInitialized(ServletRequestEvent sre)  {
          EntityManager em = DBConfig.createEntityManager();
          UsersDAO usersDAO = new UsersDAO(em);
          SubjectsDAO subjectsDAO = new SubjectsDAO(em);
          PostsDAO postsDAO = new PostsDAO(em);
          ServletRequest req = sre.getServletRequest();
-         req.setAttribute("usersDAO", usersDAO);
-         req.setAttribute("subjectsDAO", subjectsDAO);
          req.setAttribute("postsDAO", postsDAO);
+         req.setAttribute("subjectsDAO", subjectsDAO);
+         req.setAttribute("usersDAO", usersDAO);
+
     }
 	
 }

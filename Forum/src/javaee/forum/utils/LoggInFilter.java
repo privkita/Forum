@@ -33,8 +33,8 @@ public class LoggInFilter implements Filter {
 		if (login != null) {
 			User u = (User) req.getSession().getAttribute("user");
 			if (u == null) {
-				UsersDAO usersDao = (UsersDAO) req.getAttribute("usersDao");
-				u = usersDao.getByLogin(login);
+				UsersDAO usersDAO = (UsersDAO) req.getAttribute("usersDAO");
+				u = usersDAO.getByLogin(login);
 				req.getSession().setAttribute("user", u);
 			}
 		}

@@ -16,7 +16,7 @@ public class SubjectsDAO {
 	}
 	
 	public List<Subject> getSubjects() {
-		List<Subject> subjects = this.em.createQuery("SELECT s from subjects s").getResultList();
+		List<Subject> subjects = this.em.createQuery("SELECT s from Subject s").getResultList();
 		return subjects;
 	}
 	
@@ -29,7 +29,7 @@ public class SubjectsDAO {
 		EntityTransaction et = em.getTransaction();
 		try {
 			et.begin();
-			em.persist(em);
+			em.persist(s);
 			et.commit();
 			return true;
 		} catch (Exception e) {

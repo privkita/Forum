@@ -10,7 +10,8 @@ import javax.persistence.*;
 public class Post implements Serializable {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name="post_id", updatable=false, nullable=false)
 	private int post_id;
 	@Lob()
 	private String content;

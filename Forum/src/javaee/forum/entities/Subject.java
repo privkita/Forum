@@ -11,7 +11,8 @@ import javax.persistence.*;
 public class Subject implements Serializable {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name="subject_id", updatable=false, nullable=false)
 	private int subject_id;
 	private String title;
 	@Lob()

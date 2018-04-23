@@ -20,12 +20,12 @@
 			<tr>
 				<td>
 					<c:url var="url" scope="page" value="/subject">
-						<c:param name="id" value="${subject.subjectId}" />
+						<c:param name="id" value="${subject.subject_id}" />
 					</c:url>
 					<a href="${url}">${subject.title}</a>
 				</td>
-				<td><fmt:formatDate value="${subject.date}" dataStyle="short" timeStyle="short" type="both" />
-				<td>${subject.user.login}</td>
+				<td><fmt:formatDate value="${subject.date}" dateStyle="short" timeStyle="short" type="both" />
+				<td>${subject.user_id.login}</td>
 			</tr>
 		</c:forEach>	
 	</table>

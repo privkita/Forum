@@ -16,20 +16,20 @@
 			<th>Data</th>
 		</tr>
 		<tr>
-			<td>${subject.user.login}</td>
+			<td>${subject.user_id.login}</td>
 			<td>${subject.content}</td>
 			<td>${subject.date}</td>
 		</tr>
 		<c:forEach var="post" items="${subject.posts}">
 			<tr>
-				<td>${post.user.login}</td>
+				<td>${post.user_id.login}</td>
 				<td>${post.content}</td>
 				<td>${post.date}</td>
 			</tr>
 		</c:forEach>
 	</table>
 	<form method="post">
-		<input type="hidden" name="id" value="${subject.subjectId}" />
+		<input type="hidden" name="subject_id" value="${subject.subject_id}" />
 		<p>Napisz odpowiedz:</p>
 		<textarea name="content" rows="8" cols="40"></textarea><br />
 		<input type="submit" value="OK" />
